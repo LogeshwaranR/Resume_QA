@@ -3,3 +3,4 @@ pypdf2
 streamlit
 xlsxwriter
 pandas==1.3.5
+openpyxl
