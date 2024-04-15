@@ -35,7 +35,7 @@ def dataframe_to_excel(df):
         return excel_data
 
 def main():
-    st.title("PDF Q and A")
+    st.title("Resume Query Bot")
     st.write("Upload multiple PDF, Excel, and TXT files and ask questions")
 
     uploaded_files = st.file_uploader(label="", label_visibility="collapsed" ,accept_multiple_files=True)
