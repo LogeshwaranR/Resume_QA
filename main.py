@@ -64,17 +64,16 @@ def main():
         with st.spinner('Processing...'):
             for text in text_list:
                 client = OpenAI(api_key = API_KEY)
-                today = datetime.date.today()
                 prompt = "".join(text_list) + "I am a HR professional in a multinational company. Answer the following questions based on the above data." + questions
-                completion = client.chat.completions.create(
-                    model="gpt-3.5-turbo",
-                    messages=[
-                        {"role": "system", "content": "You are a ChatGPT model that answers questions."},
-                        {"role": "user", "content": prompt}
-                    ]
-                )
-                answer = completion.choices[0].message.content
-                st.write(f"Answer: {answer}")
+            completion = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a ChatGPT model that answers questions."},
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            answer = completion.choices[0].message.content
+            st.write(f"Answer: {answer}")
 
 if __name__ == "__main__":
     main()
